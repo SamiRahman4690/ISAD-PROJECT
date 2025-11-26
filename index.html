@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MYLKA – খাঁটি গরুর তরল দুধ</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; color:#333; }
+    header { background:#79b700; color:white; padding:20px; text-align:center; }
+    nav a { margin:0 10px; color:white; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; max-width:800px; margin:auto; }
+    .banner { background:#eafaf1; padding:40px; text-align:center; }
+    .btn { background:#79b700; color:white; padding:15px 25px; text-decoration:none; border-radius:5px; display:inline-block; margin-top:15px; }
+    table { width:100%; border-collapse: collapse; margin-top:20px; }
+    table, th, td { border:1px solid #ddd; }
+    th, td { padding:12px; text-align:center; }
+    form input, form select { width:100%; padding:10px; margin:8px 0; box-sizing:border-box; }
+    footer { background:#f1f1f1; padding:20px; text-align:center; font-size:0.9em; }
+    .fb-page { margin:20px auto; display:block; max-width:340px; }
+    #orderMsg { margin-top:12px; font-weight:600; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>MYLKA – খাঁটি গরুর তরল দুধ</h1>
+  <nav>
+    <a href="#home">হোম</a>
+    <a href="#about">আমাদের সম্পর্কে</a>
+    <a href="#products">পণ্যসমূহ</a>
+    <a href="#order">অর্ডার করুন</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
+</header>
+
+<section id="home" class="banner">
+  <h2>১০০% খাঁটি ফ্রেশ দুধ</h2>
+  <p>প্রতিদিন ভোরে সংগ্রহ, ঘরে সরাসরি ডেলিভারি</p>
+  <a href="#order" class="btn">আজই অর্ডার করুন</a>
+</section>
+
+<section id="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p>“MYLKA” ফেনী থেকে সরাসরি খাঁটি গরুর তরল দুধ সরবরাহ করে থাকে, কোনো পানি বা প্রিজারভেটিভ ছাড়াই।</p>
+</section>
+
+<section id="products">
+  <h2>পণ্যসমূহ</h2>
+  <table>
+    <tr><th>পরিমাণ</th><th>দাম (টাকা)</th></tr>
+    <tr><td>১ লিটার</td><td>১০০</td></tr>
+    <tr><td>৫ লিটার</td><td>৪৭০</td></tr>
+    <tr><td>১০ লিটার</td><td>৯০০</td></tr>
+  </table>
+  <p>প্রতিদিন ভোরে সংগ্রহ করে ফ্রেশ ডেলিভারি নিশ্চিত।</p>
+</section>
+
+<section id="order">
+  <h2>অর্ডার ফর্ম</h2>
+  <form onsubmit="submitOrder(event)" id="orderForm">
+    <input type="text" id="name" placeholder="আপনার নাম" required>
+    <input type="tel" id="phone" placeholder="মোবাইল নম্বর (০১৮xxxxxxxx)" required>
+    <input type="text" id="address" placeholder="ডেলিভারি ঠিকানা" required>
+    <select id="quantity" required>
+      <option value="">পরিমাণ নির্বাচন করুন</option>
+      <option value="1 লিটার">১ লিটার</option>
+      <option value="5 লিটার">৫ লিটার</option>
+      <option value="10 লিটার">১০ লিটার</option>
+    </select>
+    <input type="date" id="deliveryDate" required>
+    <button type="submit" class="btn">অর্ডার সাবমিট করুন</button>
+  </form>
+  <p id="orderMsg"></p>
+</section>
+
+<section id="contact">
+  <h2>যোগাযোগ</h2>
+  <p>☎️ ফোনঃ ০১৮xxxxxxxx (এখানে নিজের নম্বর বসাবেন)</p>
+  <p>📧 ইমেইলঃ mylka.dudh@example.com</p>
+  <p>📍 ফেসবুক পেজ নিচে দেখুন:</p>
+
+  <!-- Facebook Page Plugin: নিচের data-href-এ তোমার পেইজের পুরো URL বসাতে হবে -->
+  <div class="fb-page" data-href="https://www.facebook.com/YOUR_PAGE"
+       data-tabs="timeline" data-width="340" data-height="500"
+       data-small-header="false" data-adapt-container-width="true"
+       data-hide-cover="false" data-show-facepile="true">
+    <blockquote cite="https://www.facebook.com/YOUR_PAGE"
+                class="fb-xfbml-parse-ignore">
+      <a href="https://www.facebook.com/YOUR_PAGE">MYLKA</a>
+    </blockquote>
+  </div>
+</section>
+
+<footer>
+  © ২০২৫ MYLKA • All Rights Reserved.
+</footer>
+
+<!-- Facebook SDK -->
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/bn_BD/sdk.js#xfbml=1&version=v17.0">
+</script>
+
+<script>
+function submitOrder(e) {
+  e.preventDefault();
+  // সহজ ভেতরের ফর্ম সাবমিশন মেসেজ
+  document.getElementById('orderMsg').innerText = 'আপনার অর্ডার গ্রহণ করা হয়েছে! ধন্যবাদ 💛';
+  document.getElementById('orderMsg').style.color = 'green';
+  document.getElementById('orderForm').reset();
+  // বাস্তবে: এখানে AJAX দিয়ে Google Sheets / Firebase / server এ ডাটা পাঠাতে হবে
+}
+</script>
+
+</body>
+</html>
